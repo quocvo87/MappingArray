@@ -7,61 +7,54 @@ class MapArr
 {
     protected $results;
 
-    protected $key = '';
-    protected $dimensionKey = '';
-    protected $isArr = false;
-
     protected $casing = 'camel';
-
-    //protected $recursiveName = null;
-
-    protected $i = 0;
 
     public function build($arr=[])
     {
         if (!$arr) return [];
 
-        $this->arrayWalkRecursive($arr, function() {
-            //return $array;
+        /*$i = 0;
+        //echo '$i';
+        array_walk_recursive($arr, function($item, $key) use (&$i)
+        {
+            echo '$i: ' . $i . '</br>';
+            echo  '$key: ' . $key . '</br>';
+            $i++;
+            $this->set($this->varName($item), $item);
         });
+*/
+        /*$this->arrayWalkRecursive($arr, function() {
+            //return $array;
+        });*/
+        $this->displayArrayRecursively($arr, null);
+
+        var_dump($this->results);
 
         return $this;
     }
 
-
-    public function arrayWalkRecursive(array &$array, callable $callback)
+    public function displayArrayRecursively($array, $keysString = '')
     {
-        echo '--------------kkk' . '</br>';
-        foreach ($array as $k => &$v) {
-            //if (!$this->dimensionKey) $this->dimensionKey = $this->varName($v);
-
-            if (is_array($v)) {
-                echo '$i: ' . $this->i; echo ' is_array . </br>';
-
-                $this->dimensionKey = $this->varName($v);
-
-                $this->results[$this->varName($v)] = null;
-                $this->isArr = true;
-
-                $this->arrayWalkRecursive($v, $callback);
-            } else {
-                echo '$i: ' . $this->i; echo ' no array . </br>';
-
-                $this->dimensionKey = $this->dimensionKey && $this->isArr ? $this->dimensionKey . '.' . $this->varName($v) : $this->varName($v);
-                //if ($k == 1) $this->i = str_replace('.0', '', $this->i);
-                
-                $this->set($this->varName($v), $v);
-                $callback($v, $k, $array);
-
-                //$this->i++;
+        if (is_array($array)) {
+            foreach ($array as $key => $value) {
+                $this->displayArrayRecursively($value, $keysString . $this->varName($value) . '.');
             }
-            //var_dump($k, $v, '$i = ' . $this->i);
-            echo 'key: ' . $this->dimensionKey . '</br>';
-            $this->i++;
+        } else {
+            $this->results[rtrim($keysString, '.')] = $array;
+        }
+    }
+
+    public function key2key($key='', &$temArr)
+    {
+        if (!$key) return [];
+
+        $keyArr = explode('.', $key);
+
+        foreach($keyArr as $i){
+            $temArr[$i] = null;
         }
 
-        $this->isArr = false;
-        //$this->recursiveName = null;
+        return $this;
     }
 
     public function camel()

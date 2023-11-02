@@ -8,9 +8,9 @@ $hello = 'word';
 $my_name = 'my name';
 
 // sub array -> two demensions
-$cal1 = 'calander name 1';
-$cal2 = 'calander name 2';
-$calander = [$cal1, $cal2];
+$sub_cal1 = 'calander name 1';
+$sub_cal2 = 'calander name 2';
+$calander = [$sub_cal1, $sub_cal2];
 
 $today = 'Monday';
 
@@ -33,12 +33,14 @@ $array = [
     'week' => $week
 ];
 
+$keyWord = 'key word'; 
 var_dump('Original', $array);
-var_dump([$hello, $my_name, $calander, $today, $week]);
+
+var_dump([$hello, $my_name, $calander, $today, $week, $keyWord]);
 
 echo '------88888888888888888888888888888-</br>';
 $mArr = new MapArr;
-$mArr->camel()->build([$hello, $my_name, $calander, $today, $week]);
+$mArr->build([$hello, $my_name, $calander, $today, $week, $keyWord]);
 
 var_dump($mArr->get());
 
