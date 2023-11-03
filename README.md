@@ -1,6 +1,6 @@
 | 1. Introduction
 ----------------
-Package will help you buil a array with $key base on variable name
+    Package will help you buil a array with $key base on variable name
     Example: 
         1.1 You want to build array with key=>value to pass to a function
             + caculateFee(['fee' => $fee, 'tax' => $tax, 
