@@ -53,16 +53,18 @@
                 + $mapArr = new MapArr;
                 + caculateFee($mapArr->build([$fee, $tax, [$revenueProduct, $revenueSale]])->get());
 
-    -----------------
-    Search Google:
+-----------------
+Search Google:
     > Lazada TrueMe
     > Youtube TrueMe
     > Tiktok TrueMe 
-    ----------------
+----------------
+Tags:
     #TrueMe #TrueMeNews #TrueMilk
     #TiktokTrueme #LazadaTrueme
-    ---------------
-    [https://www.youtube.com/@TrueMeNews](https://www.youtube.com/@TrueMeNews)
+---------------
+Sites:
+    https://www.youtube.com/@TrueMeNews
     https://www.tiktok.com/@truemenews
     https://www.lazada.vn/shop/suatruemilk
 
