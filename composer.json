@@ -1,6 +1,7 @@
 {
     "name": "trueme/mapping-array",
     "type": "package",
+    "minimum-stability": "stable",
     "autoload": {
         "psr-4": {
             "TrueMe\\": "./src"
