@@ -1,7 +1,7 @@
 | 1. Introduction
 ----------------
     Package will help you buil a array with $key base on variable name
-    Example: 
+    *Example* : 
         1.1 You want to build array with key=>value to pass to a function
             + caculateFee(['fee' => $fee, 'tax' => $tax, 
                             ['revenueProduct' => $revenueProduct, 'revenueSale' => $revenueSale]
@@ -14,7 +14,6 @@
 
 | 2. Directory Struct
 -----------------------
-
     Root
     |__src
     |   |__Traits       -> support for String.php
@@ -31,7 +30,6 @@
 
 | 3. Step by step do it
 -----------------------
-
     3.1 Clone/download MappingArray folder to your computer
 
     3.2 Goto MappingArray folder > D:\YourFolder\MappingArray
@@ -43,7 +41,6 @@
 
 | 4. Guide implement MappingArray
 -----------------------
-
     4.1 Import TrueMe\MapArr class 
         example you have file D:\YourFolder\index2.php
             use TrueMe\MapArr;
@@ -67,11 +64,9 @@ Tags:
 
 Sites:
 --------------
-https://www.youtube.com/@TrueMeNews
-
-https://www.tiktok.com/@truemenews
-
-https://www.lazada.vn/shop/suatruemilk
+> https://www.youtube.com/@TrueMeNews
+> https://www.tiktok.com/@truemenews
+> https://www.lazada.vn/shop/suatruemilk
 
 
 
